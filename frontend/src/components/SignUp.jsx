@@ -10,7 +10,7 @@ const inputCls =
 
 const SignUp = () => {
   const navigate = useNavigate();
-  const url = "https://task-manager-backend-srzi.onrender.com";
+  const url = "";
   const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm();
 
   const handleSignUp = async (data) => {
