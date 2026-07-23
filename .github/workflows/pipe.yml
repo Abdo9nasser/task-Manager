@@ -53,3 +53,4 @@ jobs:
             ansible-playbook playbook.yml \
               --inventory inventory \
               --vault-password-file .vault_pass
+#done
