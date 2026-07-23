@@ -21,7 +21,7 @@ jobs:
       - name: Debug Files
         run: |
          pwd
-         ls -la
+         echo ${{secrets.DOCKER_USERNAME}}
          find . -maxdepth 2
 
       - name: Build Backend Image
