@@ -20,11 +20,15 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Debug Files
         run: |
-         curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
          pwd
          echo ${{secrets.DOCKER_USERNAME}}
          find . -maxdepth 2
-
+      - name: Notify Slack
+        run: |
+         curl -v -X POST \
+         -H "Content-type: application/json" \
+         --data '{"text":"Hello, World!"}' \
+         "YOUR_WEBHOOK_URL"
       - name: Build Backend Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/task-backend:latest ./backend
