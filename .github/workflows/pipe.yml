@@ -25,10 +25,10 @@ jobs:
          find . -maxdepth 2
       - name: Notify Slack
         run: |
-         curl -v -X POST \
+         curl -v \
          -H "Content-type: application/json" \
          --data '{"text":"Hello, World!"}' \
-         "YOUR_WEBHOOK_URL"
+         "${{ secrets.SLACK_WEBHOOK_URL }}"
       - name: Build Backend Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/task-backend:latest ./backend
